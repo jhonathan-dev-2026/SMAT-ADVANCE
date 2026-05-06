@@ -1,0 +1,22 @@
+class Estacion {
+  final int? id; // Opcional para cuando creamos una nueva
+  final String nombre;
+  final String ubicacion;
+
+  Estacion({this.id, required this.nombre, required this.ubicacion});
+
+  factory Estacion.fromJson(Map<String, dynamic> json) {
+    return Estacion(
+      id: json['id'],
+      nombre: json['nombre'],
+      ubicacion: json['ubicacion'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'nombre': nombre,
+      'ubicacion': ubicacion,
+    };
+  }
+}
